@@ -1,7 +1,7 @@
 public class calculated {
     static int calculated(int num1, int num2, char operation) throws numberException {
         int result = 0;
-        if (num1>10 | num2 >10){
+        if (num1>10 | num1<1 | num2 >10 | num2 <1){
             throw new numberException ("цифры должны быть до десяти");
         }
         switch (operation) {
