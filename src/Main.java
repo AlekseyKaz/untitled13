@@ -16,7 +16,7 @@ public class Main {
         convert convert = new convert ( );
         System.out.println ("введите значение");
         String in = sc.nextLine ( );
-        char[] Char = new char[10];
+        char[] Char = new char[4];
         for (int i = 0; i < in.length ( ); i++) {
             Char[i] = in.charAt (i);
             if (Char[i] == '+') {
@@ -30,10 +30,12 @@ public class Main {
             }
         }
         String chars = String.valueOf (Char);
-        String[] l = in.split ("[+-/*]");
+        String[] l = in.split ("[+-/* ]");
+
         String one = l[0];
         String two = l[1];
         String three = two.trim ( );
+
         RomeNumber rome = new RomeNumber ( );
 
         if( one.matches ("[^\\d]+") && two.matches ("[^\\d]+") ) {
