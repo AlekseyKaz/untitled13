@@ -36,7 +36,7 @@ public class Main {
         String three = two.trim ( );
         RomeNumber rome = new RomeNumber ( );
 
-        if( one.matches ("[^\\d]") || two.matches ("[^\\d]") ) {
+        if( one.matches ("[^\\d]+") && two.matches ("[^\\d]+") ) {
 
             try {
                 number1 = rome.romanNumber (one);
@@ -45,13 +45,15 @@ public class Main {
                 e.printStackTrace ();
             }
             if (number1 < 0 || number2 < 0) {
-                result = 0;
+                throw new IllegalArgumentException ("значение не может быть равно 0");
+
             } else {
 
-                result = calculated.calculated (number1, number2, operation); // иначе считаем
-                String resultRoman = convert.convertToRoman (result); // создается строка с результатом на римском и присваивается конвертор цифры в римскую
-                System.out.println (resultRoman);
-            }
+                    result = calculated.calculated (number1, number2, operation);// иначе считаем
+                    String resultRoman = convert.convertToRoman (result); // создается строка с результатом на римском и присваивается конвертор цифры в римскую
+                    System.out.println (resultRoman);
+                }
+
         } else {
               {
                 try {
